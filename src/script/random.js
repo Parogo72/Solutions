@@ -36,12 +36,12 @@ function darkToggle() {
     button.className += " Raised";
     button.className = button.className.replace(" Pressed", "")
     element.className = element.className.replace(" Dark", "")
-    logo.src = "https://parogo72.github.io/images/logo.png"
+    logo.src = "https://parogo72-solutions.vercel.app/images/logo.png"
   } else {
     element.className += " Dark";
     button.className += " Pressed";
     button.className = button.className.replace(" Raised", "")
-    logo.src = "https://parogo72.github.io/images/logo-dark.png"
+    logo.src = "https://parogo72-solutions.vercel.app/images/logo-dark.png"
   }
   
 }
