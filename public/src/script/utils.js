@@ -35,6 +35,7 @@ const check_var = (id, ans, i) => {
 
 const change_style = (id, bool) => {
     let element = document.getElementsByName(id)[0]
+<<<<<<< HEAD:public/src/script/utils.js
     let element2 = document.getElementById(id)
     let name = " wrong2"
     if(element2.parentNode.classList.contains(" wrong2")) name =" wrong";
@@ -44,6 +45,18 @@ const change_style = (id, bool) => {
         element ? element.parentNode.classList.add(name) : null;
         element2.parentNode.classList.add(name)
     } 
+=======
+        let element2 = document.getElementById(id)
+        let name = " wrong2"
+        let b = name
+        if(element2.parentNode.className.includes(" wrong2")) name =" wrong";
+        element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
+        element2.parentNode.className = element2.parentNode.className.replace(b, "").replace(" wrong", "")
+        if(bool) {
+            element ? element.parentNode.className += name : null;
+            element2.parentNode.className += name
+        } 
+>>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/utils.js
 }
 
 let table = {
@@ -216,7 +229,11 @@ const mole_obtainer = (array, id) => {
                 values += num * array[i+1];
             } else if(num){
                 values += num
+<<<<<<< HEAD:public/src/script/utils.js
             } else if(!parseInt(array[i])){
+=======
+            } else {
+>>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/utils.js
                 return values || null
             }
         }   
@@ -247,11 +264,22 @@ const arr_loop = (array) => {
 
 function copy(e) {
     const copyText = e;
+<<<<<<< HEAD:public/src/script/utils.js
 
     copyText.select();
   
     document.execCommand("copy");
 
+=======
+  
+    /* Select the text field */
+    copyText.select();
+  
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+  
+    /* Alert the copied text */
+>>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/utils.js
     alert("Texto copiado");
   }
 
@@ -259,3 +287,10 @@ function numberChangeEnd(element, value) {
     if(value > 1000) exponent ? value = Number(value).toExponential(aprox) :  value = Number(value).toExponential(aprox).replace(/e\+?/, 'x10^')
     element.innerHTML = value || value === 0 ? value : '---'
 }
+<<<<<<< HEAD:public/src/script/utils.js
+=======
+
+//e.addEventListener ? e.addEventListener('change', () => main()) : e.attachEvent('onchange', () => main()));
+//afcn('input_value').forEach(e => e.innerHTML += '<button class="copy-button">copy</button>');
+//afcn('copy-button').forEach(e => createEventListener(e, 'click', () => copy(Array.from(e.parentNode.childNodes).find(e => e instanceof HTMLInputElement))));
+>>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/utils.js
