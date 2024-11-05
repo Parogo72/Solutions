@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="<%= lang %>">
+<html lang="es">
 	<head>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width" />
 
-			<title><%= title %></title>
+			<title>Calculadora Disoluciones Online</title>
 
 			<noscript>
 				<meta http-equiv="refresh" content="0; url=js.html" />
 			</noscript>
-	
-			<link rel="stylesheet" href="/src/display.css" type="text/css" />
-			<link rel="stylesheet" href="/src/inputs.css" type="text/css"/>
-			<link rel="stylesheet" href="/src/settings.css" type="text/css"/>
-			<link rel="icon" href="/images/favicon-light.ico?v=1.0"/>
-			<link rel="icon" type="image/png" href="/images/logo.png">
+
+			<link rel="stylesheet" href="./src/display.css" type="text/css" />
+			<link rel="stylesheet" href="./src/inputs.css" type="text/css"/>
+			<link rel="stylesheet" href="./src/settings.css" type="text/css"/>
+			<link rel="icon" href="https://parogo72-solutions.vercel.app/images/favicon-light.ico?v=1.0" id="light-icon"/>
+			<link rel="icon" type="image/png" href="https://parogo72-solutions.vercel.app/images/logo.png">
 			<meta name="author" content="Parogo72" />
 			<meta name="robots" content="index, follow"/>
 			<meta name="keywords" content="disolución, formula, calculadora, números, solutions, calculator, numbers, math, chemistry, quimica" />
-			<meta name="description" content="<%= description %>" />
+			<meta name="description" content="Calculadora online para resolver distintos tipos de ejercicios de disoluciones. Rápida, eficaz, fácil de utilizar y sin anuncios." />
 			<meta name="theme-color" content="#0276FD">
-			<meta property="og:title" content="<%= title %>" />
+			<meta property="og:title" content="Calculadora de disoluciones Online" />
 			<meta property="og:type" content="website">
-			<meta property="og:url" content="https://disoluciones-calculator.herokuapp.com/"/>
 			<meta property="og:image:type" content="image/png"/>
-			<meta property="og:image" content="/images/logo.png"/>
+			<meta property="og:image" content="https://parogo72-solutions.vercel.app/images/logo.png"/>
 			<meta property="og:image:width" content="400"/>
 			<meta property="og:image:height" content="400"/>
-			<meta property="og:image" content="/images/favicon-light.ico"/>
-			<meta property="og:description" content="<%= description %>" />
-			<script src="/src/script/theme.js"></script>
-            <script src="/src/script/random.js"></script>
+			<meta property="og:image" content="https://parogo72-solutions.vercel.app/images/favicon-light.ico"/>
+			<meta property="og:description" content="Calculadora online para resolver distintos tipos de ejercicios de disoluciones. Rápida, eficaz, fácil de utilizar y sin anuncios." />
+			<script src="./src/script/languages.js"></script>
+			<script src="./src/script/theme.js"></script>
 	</head>
 	<body>
 
@@ -39,7 +38,7 @@
 		<header>
 			<nav>
 				<label>
-					<img id="logo" src="/images/logo.png" alt="Solutions logo" onClick="window.location.reload();">
+					<img id="logo" src="https://parogo72-solutions.vercel.app/images/logo.png" alt="Solutions logo" onClick="window.location.reload();">
 				</label>
 				<label id="type2">	
 					<svg viewBox="0 0 100 100">
@@ -83,7 +82,7 @@
 			</label>
 			<ul class="settings">
 				<li class="settings-li">
-					<h3 class="lang redondeo "><%= redondeo %></h3>
+					<h3 class="lang redondeo ">Redondeo</h3>
 					<div class="wrapper">
 						<input type="radio" name="select1" id="option-1" class="mil" checked onchange='radioToggle(this)'>
 						<input type="radio" name="select1" id="option-2" class="cent" onchange='radioToggle(this)'>
@@ -103,7 +102,7 @@
 					</div>
 				</li>
 				<li class="settings-li">
-					<h3 class="lang notation "><%= notation %></h3>
+					<h3 class="lang notation ">Notación</h3>
 					<div class="wrapper">
 						<input type="radio" name="select2" id="option1-1" class='10' checked onchange='radioToggle(this)'>
 						<input type="radio" name="select2" id="option1-2" class='e' onchange='radioToggle(this)'>
@@ -118,12 +117,12 @@
 					</div>
 				</li>
 				<li class="settings-li">
-					<h3 class="lang language "><%= language %></h3>
+					<h3 class="lang language ">Idioma</h3>
 					<div class="lang-menu">
 						<input type="checkbox" id="language">
 						<label for="language">
-							<i class="selected-lang <%= lang %>" id="lang-selector">
-								<%= idioma %>
+							<i class="selected-lang es" id="lang-selector">
+								Español
 							</i>
 						</label>
 						<ul>
@@ -151,19 +150,19 @@
 				<!-- MASAS -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn m lang"><%= m %></button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn m lang">Masas</button>
 					<ul class="dropul">
 						<li class="dropdown_input_value">
-							<label for= "m_s"><span class="lbl-t m_s lang"><%= m_s %></span></label>
-							<input type="number" value="<%= m_s1 %>" class="ipt" id="m_s" min="0" placeholder="kg" step="any"/>
+							<label for= "m_s"><span class="lbl-t m_s lang">Masa Soluto</span></label>
+							<input type="number" class="ipt" id="m_s" min="0" placeholder="kg" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "m_d"><span class="lbl-t m_d lang"><%= m_d %></span></label>
-							<input type="number" value="<%= m_d1 %>" class="ipt" id="m_d" min="0" placeholder="kg" step="any"/>
+							<label for= "m_d"><span class="lbl-t m_d lang">Masa Disolvente</span></label>
+							<input type="number" class="ipt" id="m_d" min="0" placeholder="kg" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "m_D"><span class="lbl-t m_D lang"><%= m_D %></span></label>
-							<input type="number" value="<%= m_D1 %>" class="ipt" id="m_D" min="0" placeholder="kg" step="any"/>
+							<label for= "m_D"><span class="lbl-t m_D lang">Masa Disolución</span></label>
+							<input type="number" class="ipt" id="m_D" min="0" placeholder="kg" step="any"/>
 						</li>
 					</ul>
 				</li>
@@ -173,19 +172,19 @@
 				<!-- VOLUMENES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn v lang"><%= v %></button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn v lang">Volúmenes</button>
 					<ul class="dropul">
 						<li class="dropdown_input_value">
-							<label for= "v_s"><span class="lbl-t v_s lang"><%= v_s %></span></label>
-							<input type="number" value="<%= v_s1 %>" class="ipt" id="v_s" min="0" placeholder="L" step="any"/>
+							<label for= "v_s"><span class="lbl-t v_s lang">Volumen Soluto</span></label>
+							<input type="number" class="ipt" id="v_s" min="0" placeholder="L" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "v_d"><span class="lbl-t v_d lang"><%= v_d %></span></label>
-							<input type="number" value="<%= v_d1 %>" class="ipt" id="v_d" min="0" placeholder="L" step="any"/>
+							<label for= "v_d"><span class="lbl-t v_d lang">Volumen Disolvente</span></label>
+							<input type="number" class="ipt" id="v_d" min="0" placeholder="L" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "v_D"><span class="lbl-t v_D lang" ><%= v_D %></span></label>
-							<input type="number" value="<%= v_D1 %>" class="ipt" id="v_D" min="0" placeholder="L" step="any"/>
+							<label for= "v_D"><span class="lbl-t v_D lang" >Volumen Disolución</span></label>
+							<input type="number" class="ipt" id="v_D" min="0" placeholder="L" step="any"/>
 						</li>
 					</ul>
 				</li>
@@ -195,19 +194,19 @@
 				<!-- DENSIDADES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn d lang"><%= d %></button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn d lang">Densidades</button>
 					<ul class="dropul">
 						<li class="dropdown_input_value">
-							<label for= "d_s"><span class="lbl-t d_s lang"><%= d_s %></span></label>
-							<input type="number" value="<%= d_s1 %>" class="ipt" id="d_s" min="0" placeholder="kg/L" step="any"/>
+							<label for= "d_s"><span class="lbl-t d_s lang">Densidad Soluto</span></label>
+							<input type="number" class="ipt" id="d_s" min="0" placeholder="kg/L" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "d_d"><span class="lbl-t d_d lang"><%= d_d %></span></label>
-							<input type="number" value="<%= d_d1 %>" class="ipt" id="d_d" min="0" placeholder="kg/L" step="any"/>
+							<label for= "d_d"><span class="lbl-t d_d lang">Densidad Disolvente</span></label>
+							<input type="number" class="ipt" id="d_d" min="0" placeholder="kg/L" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "d_D"><span class="lbl-t d_D lang"><%= d_D %></span></label>
-							<input type="number" value="<%= d_D1 %>" class="ipt" id="d_D" min="0" placeholder="kg/L" step="any"/>
+							<label for= "d_D"><span class="lbl-t d_D lang">Densidad Disolución</span></label>
+							<input type="number" class="ipt" id="d_D" min="0" placeholder="kg/L" step="any"/>
 						</li>
 					</ul>
 				</li>
@@ -217,19 +216,19 @@
 				<!-- MASAS MOLARES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn m_mol lang"><%= m_mol %></button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn m_mol lang">Masas Molares</button>
 					<ul class="dropul">
 						<li class="dropdown_input_value">
-							<label for= "m_mol_s"><span class="lbl-t m_mol_s lang"><%= m_mol_s %></span></label>
-							<input type="text" value="<%= m_mol_s1 %>" class="ipt" id="m_mol_s" placeholder="g/mol"/>
+							<label for= "m_mol_s"><span class="lbl-t m_mol_s lang">Masa Molar Soluto</span></label>
+							<input type="text" class="ipt" id="m_mol_s" placeholder="g/mol"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "m_mol_d"><span class="lbl-t m_mol_d lang"><%= m_mol_d %></span></label>
-							<input type="text" value="<%= m_mol_d1 %>" class="ipt" id="m_mol_d" placeholder="g/mol"/>
+							<label for= "m_mol_d"><span class="lbl-t m_mol_d lang">Masa Molar Disolvente</span></label>
+							<input type="text" class="ipt" id="m_mol_d" placeholder="g/mol"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "m_mol_D"><span class="lbl-t m_mol_D lang"><%= m_mol_D %></span></label>
-							<input type="text" value="<%= m_mol_D1 %>" class="ipt" id="m_mol_D" placeholder="g/mol"/>
+							<label for= "m_mol_D"><span class="lbl-t m_mol_D lang">Masa Molar Disolución</span></label>
+							<input type="text" class="ipt" id="m_mol_D" placeholder="g/mol"/>
 						</li>
 					</ul>
 				</li>
@@ -239,19 +238,19 @@
 				<!-- NUMERO DE MOLES -->
 
 				<li class="dropdown" >
-					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn n lang"><%= n %></button>
+					<button onclick="dropdown(Array.from(this.parentNode.children))" class="dropbtn n lang">Número de Moles</button>
 					<ul class="dropul">
 						<li class="dropdown_input_value">
-							<label for= "n_s"><span class="lbl-t n_s lang"><%= n_s %></span></label>
-							<input type="number" value="<%= n_s1 %>" class="ipt" id="n_s" min="0" step="any"/>
+							<label for= "n_s"><span class="lbl-t n_s lang">Moles Soluto</span></label>
+							<input type="number" class="ipt" id="n_s" min="0" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "n_d"><span class="lbl-t n_d lang"><%= n_d %></span></label>
-							<input type="number" value="<%= n_d1 %>" class="ipt" id="n_d" min="0" step="any"/>
+							<label for= "n_d"><span class="lbl-t n_d lang">Moles Disolvente</span></label>
+							<input type="number" class="ipt" id="n_d" min="0" step="any"/>
 						</li>
 						<li class="dropdown_input_value">
-							<label for= "n_D"><span class="lbl-t n_D lang"><%= n_D %></span></label>
-							<input type="number" value="<%= n_D1 %>" class="ipt" id="n_D" min="0" step="any"/>
+							<label for= "n_D"><span class="lbl-t n_D lang">Moles Disolución</span></label>
+							<input type="number" class="ipt" id="n_D" min="0" step="any"/>
 						</li>
 					</ul>
 				</li>
@@ -259,134 +258,131 @@
 				<!-- NUMERO DE MOLES END -->
 
 				<li class="input_value">
-					<% if(v_a1){ %>
-						<input type="checkbox" class="ipt v_a" id="v_a" checked/>
-					  <% } else{ %>  
-						<input type="checkbox" class="ipt v_a" id="v_a"/>
-					 <% } %>
-					<label for= "v_a" class="check lbl-t v_a lang"><%= v_a %></label>
+					<input type="checkbox" class="ipt v_a" id="v_a"/>
+					<label for= "v_a" class="check lbl-t v_a lang">Volúmenes Aditivos</label>
 				</li>
 				
 				<li class="input_value">
-					<label for= "p_m"><span class="lbl-t p_m lang"><%= p_m %></span></label>
-					<input type="number" value="<%= p_m1 %>" class="ipt" id="p_m" min="0" step="any"/>
+					<label for= "p_m"><span class="lbl-t p_m lang">% Masa</span></label>
+					<input type="number" class="ipt" id="p_m" min="0" step="any"/>
 				</li>
 				<li class="input_value">
-					<label for= "p_v"><span class="lbl-t p_v lang"><%= p_v %></span></label>
-					<input type="number" value="<%= p_v1 %>" class="ipt" id="p_v" min="0" step="any"/>
+					<label for= "p_v"><span class="lbl-t p_v lang">% Volumen</span></label>
+					<input type="number" class="ipt" id="p_v" min="0" step="any"/>
 				</li>
 				<li class="input_value">
-					<label for= "c"><span class="lbl-t c lang"><%= c %></span></label>
-					<input type="number" value="<%= c1 %>" class="ipt" id="c" min="0" placeholder="kg/L" step="any"/>
+					<label for= "c"><span class="lbl-t c lang">Concentración</span></label>
+					<input type="number" class="ipt" id="c" min="0" placeholder="kg/L" step="any"/>
 				</li>
 				<li class="input_value">
-					<label for= "molaridad"><span class="lbl-t molaridad lang"><%= molaridad %></span></label>
-					<input type="number" value="<%= molaridad1 %>" class="ipt" id="molaridad" min="0" placeholder="M" step="any"/>
+					<label for= "molaridad"><span class="lbl-t molaridad lang">Molaridad</span></label>
+					<input type="number" class="ipt" id="molaridad" min="0" placeholder="M" step="any"/>
 				</li>
 				<li class="input_value">
-					<label for= "molalidad"><span class="lbl-t molalidad lang"><%= molalidad %></span></label>
-					<input type="number" value="<%= molalidad1 %>" class="ipt" id="molalidad" min="0" placeholder="mol/kg" step="any"/>
+					<label for= "molalidad"><span class="lbl-t molalidad lang">Molalidad</span></label>
+					<input type="number" class="ipt" id="molalidad" min="0" placeholder="mol/kg" step="any"/>
 				</li>
 				<li class="input_value">
-					<label for= "f_m"><span class="lbl-t f_m lang"><%= f_m %></span></label>
-					<input type="number" value="<%= f_m1 %>" class="ipt" id="f_m" min="0" step="any"/>
+					<label for= "f_m"><span class="lbl-t f_m lang">Fracción Molar</span></label>
+					<input type="number" class="ipt" id="f_m" min="0" step="any"/>
 				</li>	
 			</ul>
 			<hr>
 			<ul class="response" id="response-container">
 				<li class="output_value">
-					<label for= "m_s"><span class="lbl-t m_s lang"><%= m_s %></span></label>
+					<label for= "m_s"><span class="lbl-t m_s lang">Masa Soluto</span></label>
 					<output name="m_s"></output>
 				</li>
 				<li class="output_value">
-					<label for= "m_d"><span class="lbl-t m_d lang"><%= m_d %></span></label> 
+					<label for= "m_d"><span class="lbl-t m_d lang">Masa Disolvente</span></label> 
 					<output name="m_d"></output>
 				</li>
 				<li class="output_value">
-					<label for= "m_D"><span class="lbl-t m_D lang"><%= m_D %></span></label> 
+					<label for= "m_D"><span class="lbl-t m_D lang">Masa Disolución</span></label> 
 					<output name="m_D"></output>
 				</li>
 				<li class="output_value">
-					<label for= "v_s"><span class="lbl-t v_s lang"><%= v_s %></span></label> 
+					<label for= "v_s"><span class="lbl-t v_s lang">Volumen Soluto</span></label> 
 					<output name="v_s"></output>
 				</li>
 				<li class="output_value">
-					<label for= "v_d"><span class="lbl-t v_d lang"><%= v_d %></span></label> 
+					<label for= "v_d"><span class="lbl-t v_d lang">Volumen Disolvente</span></label> 
 					<output name="v_d"></output>
 				</li>
 				<li class="output_value">
-					<label for= "v_D"><span class="lbl-t v_D lang"><%= v_D %></span></label> 
+					<label for= "v_D"><span class="lbl-t v_D lang">Volumen Disolución</span></label> 
 					<output name="v_D"></output>
 				</li>
 				<li class="output_value">
-					<label for= "d_s"><span class="lbl-t d_s lang"><%= d_s %></span></label> 
+					<label for= "d_s"><span class="lbl-t d_s lang">Densidad Soluto</span></label> 
 					<output name="d_s"></output>
 				</li>
 				<li class="output_value">
-					<label for= "d_s"><span class="lbl-t d_d lang"><%= d_d %></span></label> 
+					<label for= "d_s"><span class="lbl-t d_d lang">Densidad Disolvente</span></label> 
 					<output name="d_d"></output>
 				</li>
 				<li class="output_value">
-					<label for= "d_D"><span class="lbl-t d_D lang"><%= d_D %></span></label> 
+					<label for= "d_D"><span class="lbl-t d_D lang">Densidad Disolución</span></label> 
 					<output name="d_D"></output>
 				</li>
 				<li class="output_value">
-					<label for= "p_m"><span class="lbl-t p_m lang"><%= p_m %></span></label> 
+					<label for= "p_m"><span class="lbl-t p_m lang">% Masa</span></label> 
 					<output name="p_m"></output>
 				</li>
 				<li class="output_value">
-					<label for= "p_v"><span class="lbl-t p_v lang"><%= p_v %></span></label> 
+					<label for= "p_v"><span class="lbl-t p_v lang">% Volumen</span></label> 
 					<output name="p_v"></output>
 				</li>
 				<li class="output_value">
-					<label for= "c"><span class="lbl-t c lang"><%= c %></span></label> 
+					<label for= "c"><span class="lbl-t c lang">Concentración</span></label> 
 					<output name="c"></output>
 				</li>
 				<li class="output_value">
-					<label for= "molaridad"><span class="lbl-t molaridad lang"><%= molaridad %></span></label> 
+					<label for= "molaridad"><span class="lbl-t molaridad lang">Molaridad</span></label> 
 					<output name="molaridad"></output>
 				</li>
 				<li class="output_value">
-					<label for= "molalidad"><span class="lbl-t molalidad lang"><%= molalidad %></span></label> 
+					<label for= "molalidad"><span class="lbl-t molalidad lang">Molalidad</span></label> 
 					<output name="molalidad"></output>
 				</li>
 				<li class="output_value">
-					<label for= "m_mol_s"><span class="lbl-t m_mol_s lang"><%= m_mol_s %></span></label> 
+					<label for= "m_mol_s"><span class="lbl-t m_mol_s lang">Masa Molar Soluto</span></label> 
 					<output name="m_mol_s"></output>
 				</li>
 				<li class="output_value">
-					<label for= "m_mol_d"><span class="lbl-t m_mol_d lang"><%= m_mol_d %></span></label> 
+					<label for= "m_mol_d"><span class="lbl-t m_mol_d lang">Masa Molar Disolvente</span></label> 
 					<output name="m_mol_d"></output>
 				</li>
 				<li class="output_value">
-					<label for= "m_mol_D"><span class="lbl-t m_mol_D lang"><%= m_mol_D %></span></label> 
+					<label for= "m_mol_D"><span class="lbl-t m_mol_D lang">Masa Molar Disolución</span></label> 
 					<output name="m_mol_D"></output>
 				</li>
 				<li class="output_value">
-					<label for= "f_m"><span class="lbl-t f_m lang"><%= f_m %></span></label> 
+					<label for= "f_m"><span class="lbl-t f_m lang">Fracción Molar</span></label> 
 					<output name="f_m"></output>
 				</li>
 				<li class="output_value">
-					<label for= "n_s"><span class="lbl-t n_s lang"><%= n_s %></span></label> 
+					<label for= "n_s"><span class="lbl-t n_s lang">Moles Soluto</span></label> 
 					<output name="n_s"></output>
 				</li>
 				<li class="output_value">
-					<label for= "n_d"><span class="lbl-t n_d lang"><%= n_d %></span></label> 
+					<label for= "n_d"><span class="lbl-t n_d lang">Moles Disolvente</span></label> 
 					<output name="n_d"></output>
 				</li>
 				<li class="output_value">
-					<label for= "n_D"><span class="lbl-t n_D lang"><%= n_D %></span></label> 
+					<label for= "n_D"><span class="lbl-t n_D lang">Moles Disolución</span></label> 
 					<output name="n_D"></output>
 				</li>
 			</ul>
 		</div>
 
 		<!-- MAIN END -->
-		<script src="/src/script/variables-globales.js"></script>
-		<script src="/src/script/utils.js"></script>
-		<script src="/src/script/models/formulas.js"></script>
-		<script src="/src/script/models/variables.js"></script>
+		<script src="./src/script/variables-globales.js"></script>
+		<script src="./src/script/utils.js"></script>
+		<script src="./src/script/models/formulas.js"></script>
+		<script src="./src/script/models/variables.js"></script>
+		<script src="./src/script/random.js"></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.2/math.js'></script>
-		<script src="/src/script/script.js"></script>
+		<script src="./src/script/script.js"></script>
 	</body>
 </html>
