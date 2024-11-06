@@ -41,13 +41,13 @@ let previous = [];
 let x = 0;
 function end() {
   x = 0;
-<<<<<<< HEAD:public/src/script/script.js
   let data = dataEncoder(Object.keys(values))
-  let params = new URL(window.location.href).searchParams
-  params.set("data", data)
-  if(data) history.pushState(null, null, "?" + params.toString());
-=======
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/script.js
+  const url = new URL(location);
+  if (data) url.searchParams.set("data", data);
+  else url.searchParams.delete("data")
+  history.pushState({}, "", url);
+  
+
   for(let i of Object.entries(values)) {
     
     let element = document.getElementsByName(i[0])[0];
@@ -56,13 +56,8 @@ function end() {
     if(!element) return;
     
     let had_value = false;
-<<<<<<< HEAD:public/src/script/script.js
     if(element.parentNode.classList.contains("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
     element.parentNode.classList.remove("calculated", "had_value", "has_value")
-=======
-    if(element.parentNode.className.includes("has_value") && (previous[x] || previous[x] === 0) && previous[x] !== i[1].value) had_value = true;
-    element.parentNode.className = element.parentNode.className.replace(" calculated", "").replace(" had_value", "").replace(" has_value", "")
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/script.js
     previous[x] = i[1].value
     if(!i[1].value && i[1].value !== 0) {
       element.parentNode.style.display = 'none';
@@ -72,23 +67,14 @@ function end() {
       element.parentNode.style.display = 'flex'
     }
     if(input_element.value) {
-<<<<<<< HEAD:public/src/script/script.js
       had_value ? element.parentNode.classList.add("had_value") : element.parentNode.classList.add("has_value");
     } else {
       element.parentNode.classList.add("calculated");
-=======
-      had_value ? element.parentNode.className += " had_value" : element.parentNode.className += " has_value";
-    } else {
-      element.parentNode.className += " calculated";
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/script.js
     }
     i[1].lastValue = i[1].value
     x++
   }
-<<<<<<< HEAD:public/src/script/script.js
   
-=======
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/script.js
 }
 const afcn = id => Array.from(document.getElementsByClassName(id));
 const createEventListener = (enode, ename, callback) => enode.addEventListener ? enode.addEventListener(ename, callback) : enode.attachEvent(`on${ename}`, callback);
@@ -96,13 +82,19 @@ afcn('ipt').forEach(e => createEventListener(e, 'change', main));
 main()
 
 if(c.theme.value === "black") darkToggle();
-<<<<<<< HEAD:public/src/script/script.js
 if(!/\/ca|\/en|\/es/.test(window.location.href)) languageToggle(c.lang.value);
 radioToggle(c.round.value)
 radioToggle(c.notation.value)
 
 function dataEncoder (keys) {
-  let keys_end = keys.filter(i => document.getElementById(i) && document.getElementById(i).value && document.getElementById(i).checked !== false);
+  let keys_end = keys.filter(i => {
+    let el = document.getElementById(i)
+    if (!el) return false;
+    if (el.hasAttribute("value") && el.value != "") return true;
+    if (el.hasAttribute("checked") && el.checked) return true;
+    return false;
+});
+  
   let values_end = keys_end.map(i => document.getElementById(i).checked || document.getElementById(i).value);
   if(keys_end.length === 0) return;
   const str = `${keys_end.map(i => i + '1').join('&')}$${values_end.join('&')}`;
@@ -110,8 +102,3 @@ function dataEncoder (keys) {
   if(base64.endsWith('=')) return base64.slice(0, -1)
   return base64
 }
-=======
-languageToggle(params.get("lang") || c.lang.value)
-radioToggle(c.round.value)
-radioToggle(c.notation.value)
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/script.js

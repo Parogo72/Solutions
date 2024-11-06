@@ -58,7 +58,7 @@ app.get('/:lang', (req, res, next) => {
     });
 });
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + 'public'));
 
 app.set('views', __dirname + '/../views');
 
@@ -72,8 +72,7 @@ function decode(data) {
     if(!data) {
         return values1
     }
-    
-    const str = atob(data);
+    const str = Buffer.from(data, 'base64').toString();
     const [keys, values] = str.split('$');
     let arr = [keys.split('&'), values.split('&')]
     let iterator = 0

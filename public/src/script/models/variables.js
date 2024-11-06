@@ -9,14 +9,6 @@ class Variable {
         let element = document.getElementsByName(this.id)[0]
         let element2 = document.getElementById(this.id)
         let name = " wrong2"
-<<<<<<< HEAD:public/src/script/models/variables.js
-        if(element2.parentNode.classList.contains(" wrong2")) name =" wrong";
-        element ? element.classList.remove("wrong", "wrong2") : null;
-        element2.parentNode.classList.remove("wrong", "wrong2");
-        if(bool) {
-            element ? element.parentNode.classList.add(name) : null;
-            element2.parentNode.classList.add(name)
-=======
         let b = name
         if(element2.parentNode.className.includes(" wrong2")) name =" wrong";
         element ? element.parentNode.className = element.parentNode.className.replace(b, "").replace(" wrong", "") : null;
@@ -24,7 +16,6 @@ class Variable {
         if(bool) {
             element ? element.parentNode.className += name : null;
             element2.parentNode.className += name
->>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/models/variables.js
         } 
     }
     calcValue() {
