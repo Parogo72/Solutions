@@ -245,16 +245,6 @@ const arr_loop = (array) => {
     return values
 }
 
-function copy(e) {
-    const copyText = e;
-
-    copyText.select();
-  
-    document.execCommand("copy");
-
-    alert("Texto copiado");
-  }
-
 function numberChangeEnd(element, value) {
     if(value > 1000) exponent ? value = Number(value).toExponential(aprox) :  value = Number(value).toExponential(aprox).replace(/e\+?/, 'x10^')
     element.innerHTML = value || value === 0 ? value : '---'

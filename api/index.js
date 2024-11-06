@@ -73,6 +73,7 @@ function decode(data) {
         return values1
     }
     const str = Buffer.from(data, 'base64').toString();
+
     const [keys, values] = str.split('$');
     let arr = [keys.split('&'), values.split('&')]
     let iterator = 0

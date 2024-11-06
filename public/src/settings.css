@@ -121,7 +121,6 @@
     width: 100%;
 }
 
-<<<<<<< Updated upstream:public/src/settings.css
 .lang-menu ul li span {
     text-decoration: none;
     padding: 5% 10%;
@@ -132,8 +131,6 @@
     user-select: none;
 }
 
-=======
->>>>>>> Stashed changes:static/src/settings.css
 .lang-menu ul li:hover {
     background-color: var(--language-bg);
 }

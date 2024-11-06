@@ -43,6 +43,7 @@ function end() {
   x = 0;
   let data = dataEncoder(Object.keys(values))
   const url = new URL(location);
+  
   if (data) url.searchParams.set("data", data);
   else url.searchParams.delete("data")
   history.pushState({}, "", url);
@@ -91,14 +92,12 @@ function dataEncoder (keys) {
     let el = document.getElementById(i)
     if (!el) return false;
     if (el.hasAttribute("value") && el.value != "") return true;
-    if (el.hasAttribute("checked") && el.checked) return true;
+    if (el.checked) return true;
     return false;
 });
-  
   let values_end = keys_end.map(i => document.getElementById(i).checked || document.getElementById(i).value);
   if(keys_end.length === 0) return;
   const str = `${keys_end.map(i => i + '1').join('&')}$${values_end.join('&')}`;
-  const base64 = window.btoa(str)
-  if(base64.endsWith('=')) return base64.slice(0, -1)
-  return base64
+
+  return window.btoa(str)
 }

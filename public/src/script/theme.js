@@ -70,5 +70,5 @@ if(!c.round.exist()) c.round.value = __conf.eq.round[__conf.default.round];
 
 const params = new URLSearchParams(window.location.search);
 
-if(!/^.*\/(es|en|ca)$/gm.test(location.href)) location.replace(location.href + "/" + c.lang.value);
+if(!/^.*\/(es|en|ca).*$/gm.test(location.href)) location.replace(location.href + "/" + c.lang.value);
 else c.lang.value = /^.*\/(es|en|ca)$/gm.exec(location.href)[1];
