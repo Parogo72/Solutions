@@ -10,6 +10,7 @@
 				<meta http-equiv="refresh" content="0; url=js.html" />
 			</noscript>
 	
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 			<link rel="stylesheet" href="/src/display.css" type="text/css" />
 			<link rel="stylesheet" href="/src/inputs.css" type="text/css"/>
@@ -22,6 +23,13 @@
 			<link rel="icon" href="/images/favicon-light.ico?v=1.0"/>
 			<link rel="icon" type="image/png" href="/images/logo.png">
 >>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e
+=======
+			<link rel="stylesheet" href="/static/src/display.css" type="text/css" />
+			<link rel="stylesheet" href="/static/src/inputs.css" type="text/css"/>
+			<link rel="stylesheet" href="/static/src/settings.css" type="text/css"/>
+			<link rel="icon" href="/static/images/favicon-light.ico?v=1.0"/>
+			<link rel="icon" type="image/png" href="/static/images/logo.png">
+>>>>>>> Stashed changes
 			<meta name="author" content="Parogo72" />
 			<meta name="robots" content="index, follow"/>
 			<meta name="keywords" content="disolución, formula, calculadora, números, solutions, calculator, numbers, math, chemistry, quimica" />
@@ -31,13 +39,13 @@
 			<meta property="og:type" content="website">
 			<meta property="og:url" content="https://parogo72-solutions.vercel.app/"/>
 			<meta property="og:image:type" content="image/png"/>
-			<meta property="og:image" content="https://parogo72-solutions.vercel.app/images/logo.png"/>
+			<meta property="og:image" content="/static/images/logo.png"/>
 			<meta property="og:image:width" content="400"/>
 			<meta property="og:image:height" content="400"/>
-			<meta property="og:image" content="https://parogo72-solutions.vercel.app/images/favicon-light.ico"/>
+			<meta property="og:image" content="/static/images/favicon-light.ico"/>
 			<meta property="og:description" content="<%= description %>" />
-			<script src="https://parogo72-solutions.vercel.app/src/script/theme.js"></script>
-            <script src="https://parogo72-solutions.vercel.app/src/script/random.js"></script>
+			<script src="/static/src/script/theme.js"></script>
+            <script src="/static/src/script/random.js"></script>
 	</head>
 	<body>
 
@@ -46,7 +54,7 @@
 		<header>
 			<nav>
 				<label>
-					<img id="logo" src="/images/logo.png" alt="Solutions logo" onClick="window.location.reload();">
+					<img id="logo" src="/static/images/logo.png" alt="Solutions logo" onClick="window.location.reload();">
 				</label>
 				<label id="type2">	
 					<svg viewBox="0 0 100 100">
@@ -134,14 +142,14 @@
 							</i>
 						</label>
 						<ul>
-							<li class="Español" onclick="languageToggle(this)">
-								<span class="es">Español</span>
+							<li class="Español">
+								<a href="/es" class="es">Español</a>
 							</li>
-							<li class="English" onclick="languageToggle(this)">
-								<span class="en">English</span>
+							<li class="English">
+								<a href="/en" class="en">English</a>
 							</li>
-							<li class="Català" onclick="languageToggle(this)">
-								<span class="ca">Català</span>
+							<li class="Català">
+								<a href="/ca" class="ca">Català</a>
 							</li>
 						</ul>
 					</div>
@@ -389,11 +397,11 @@
 		</div>
 
 		<!-- MAIN END -->
-		<script src="https://parogo72-solutions.vercel.app/src/script/variables-globales.js"></script>
-		<script src="https://parogo72-solutions.vercel.app/src/script/utils.js"></script>
-		<script src="https://parogo72-solutions.vercel.app/src/script/models/formulas.js"></script>
-		<script src="https://parogo72-solutions.vercel.app/src/script/models/variables.js"></script>
+		<script src="/static/src/script/variables-globales.js"></script>
+		<script src="/static/src/script/utils.js"></script>
+		<script src="/static/src/script/models/formulas.js"></script>
+		<script src="/static/src/script/models/variables.js"></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.2/math.js'></script>
-		<script src="https://parogo72-solutions.vercel.app/src/script/script.js"></script>
+		<script src="/static/src/script/script.js"></script>
 	</body>
 </html>

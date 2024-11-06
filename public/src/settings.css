@@ -92,13 +92,13 @@
     margin-right: 10px;
 }
 .lang-menu .selected-lang.es:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/españa.png');
+    background-image: url('../images/españa.png');
 }
 .lang-menu .selected-lang.en:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/reino-unido.png');
+    background-image: url('../images/reino-unido.png');
 }
 .lang-menu .selected-lang.ca:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/cataluña.png');
+    background-image: url('../images/cataluña.png');
 }
 
 .lang-menu ul {
@@ -121,6 +121,7 @@
     width: 100%;
 }
 
+<<<<<<< Updated upstream:public/src/settings.css
 .lang-menu ul li span {
     text-decoration: none;
     padding: 5% 10%;
@@ -131,6 +132,8 @@
     user-select: none;
 }
 
+=======
+>>>>>>> Stashed changes:static/src/settings.css
 .lang-menu ul li:hover {
     background-color: var(--language-bg);
 }
@@ -142,7 +145,16 @@
     top: 50%;
     left: -20%;
 }
-.lang-menu ul li span:before {
+.lang-menu ul li a {
+    color: inherit; 
+    text-decoration: none;
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin: 0;
+}
+.lang-menu ul li a:before {
     content: '';
     display: inline-block;
     width: 25px;
@@ -154,14 +166,14 @@
 }
 
 .es:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/españa.png');
+    background-image: url('../images/españa.png');
 }
 
 .en:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/reino-unido.png');
+    background-image: url('../images/reino-unido.png');
 }
 .ca:before {
-    background-image: url('https://parogo72-solutions.vercel.app/images/cataluña.png');
+    background-image: url('../images/cataluña.png');
 }
 
 #language:checked ~ ul {

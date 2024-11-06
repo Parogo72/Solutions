@@ -37,6 +37,7 @@ app.disable('x-powered-by');
 
 app.get('/', (req, res) => {
     const text = t.get('es');
+
     let data_obj = decode(req.query.data);
     res.render('index.ejs', {
         ...text,

@@ -25,7 +25,7 @@ const __conf = {
     },
     eq: {
         theme: ['white', 'black'],
-        lang: ['Español', 'English', 'Català'],
+        lang: ['es', 'en', 'ca'],
         notation: ["10", "e"],
         round: ["mil", "cent", "dec"]
     } 
@@ -67,6 +67,7 @@ if(!c.lang.exist()) c.lang.value = __conf.eq.lang[__conf.default.lang];
 if(!c.notation.exist()) c.notation.value = __conf.eq.notation[__conf.default.notation];
 if(!c.round.exist()) c.round.value = __conf.eq.round[__conf.default.round];
 
+<<<<<<< Updated upstream:public/src/script/theme.js
 const params = new URLSearchParams(window.location.search);
 <<<<<<< HEAD:public/src/script/theme.js
 =======
@@ -75,3 +76,9 @@ if(languages[params.get("lang")] && languages[params.get("lang")].description) {
     document.querySelector('meta[property="og:description"]').setAttribute("content", languages[params.get("lang")].description);
 }
 >>>>>>> b9064b9c1ad7d407003fce09576e6f661fb5e31e:static/src/script/theme.js
+=======
+if(!/^.*\/(es|en|ca)$/gm.test(location.href)) location.replace(location.href + "/" + c.lang.value);
+else c.lang.value = /^.*\/(es|en|ca)$/gm.exec(location.href)[1];
+
+const params = new URLSearchParams(window.location.search);
+>>>>>>> Stashed changes:static/src/script/theme.js
