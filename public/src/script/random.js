@@ -102,6 +102,6 @@ function languageToggle(e) {
     break;
   }
   if(!lang || document.documentElement.lang === lang) return;
-  window.location.href = window.location.protocol + '//' + window.location.host + "/" + lang
+  window.location.href.replace("/"+document.documentElement.lang, "/" + lang)
   c.lang.value = e.className ? e.className : e
 }
