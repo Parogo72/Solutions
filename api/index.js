@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-let values1 = {
+let defaultV = {
     'm_s1': '',
     'm_d1': '',
     'm_D1': '',
@@ -70,8 +70,9 @@ app.listen(process.env.PORT || 3000, () => console.log('Deployed'));
 
 function decode(data) {
     if(!data) {
-        return values1
+        return defaultV;
     }
+    let values1 = {...defaultV}
     const str = Buffer.from(data, 'base64').toString();
 
     const [keys, values] = str.split('$');
